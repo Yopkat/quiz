@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HOMe</title>
+        <meta name="author" content="ICE">
+        <meta name="author" content="">
+        <meta name="description" content="">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <style>
+            * {
+                box-sizing: border-box;
+                font-family: "verdana", "arial", sans-serif;
+            }
+            html {
+                width: 100vw;
+                height: 100vw;
+                margin: 0;
+                padding: 0;
+                position: fixed;
+            }
+            body {
+                color: white;
+                width: 90vw;
+                height: 100%;
+                margin: auto;
+                background-color: black;
+            }
+            footer {
+                position: fixed;
+                bottom:  0;
+                left: 0;
+                margin: auto;
+                padding: 10px;
+                width: 100vw;
+                text-align: left;
+                font-size: 0.8rem;
+            }
+            a {
+                color:  white;
+            }
+            h1 {
+                text-align: center;
+
+            }
+            #house {
+                display: block;
+                margin: auto;
+            }
+            /* animation */
+            .home {
+                stroke-dasharray: 1000;
+                stroke-dashoffset: 1000;
+                animation: draw 6s linear forwards infinite;
+            }
+            @keyframes draw {
+                from {
+                    stroke-dashoffset: 1000;
+                }
+                to {
+                    stroke-dashoffset: 3;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1> HOME</h1>
+        <svg id='house' width="99" height="99" viewbox='0 0 101 101' fil="transperent">
+            <path class='home' d="m 16.5 99 1 0 -66 1 33 -33 1 33 33 1 0 66 1 -66 0 1 66 1 -66 0 1 66 66"
+            stroke="white" stroke-width='5'></path>
+        </svg>
+
+        <footer>
+            <ul>
+                <li><a href='https://css-tricks.com/svg-line-animation-works/'
+                    rel='noopener noreferrer'>Animation</a></li>
+                    <li>Big Ice Dev</li>
+            </ul>
+        </footer>
+    </body>
+</html>

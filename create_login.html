@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="utf-8">
+<head>
+    <title>Stylish Sign-in page</title>
+    <style>
+        /* CSS style */
+        body {
+            background-color: black;
+            font-family: arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 300px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+        text-align: center;
+        color: #333;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 90%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        outline: none;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #4caf50;
+        border: none;
+        color: #fff;
+        font-weight: bold;
+        border-radius: 4px;
+        cursor: pointer;
+        outline: none;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+
+
+   h6 {
+    text-align: center;
+    color: #333;
+    font-weight: bolder;
+   }
+
+        /* ... (rest of your styles) ... */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Sign up</h2>
+        <form id="signup-form" action="/submit" method="post">
+            <input type="text" id="First-name" name="firstName" placeholder="First-name" required>
+            <input type="text" id="Last-name" name="last-name" placeholder="Last-name" required>
+            <input type="number" id="Phone-number" name="Phone-number" placeholder="Phone-number" required>
+            <br>
+            <br>
+            <input type="email" id="Your-Email" name="email" placeholder="Your-Email" required>
+            <br>
+            <br>
+            <input type="text" id="Username" name="username" placeholder="username" required>
+            <input type="password" id="Password" name="password" placeholder="password" required>
+            <input type="submit" value="Sign up">
+        </form>
+        <br>
+        <h6>Already Have an account? Login <a href="login.html">Here!</a></h6>
+        <br>
+    </div>
+
+    
+</body>
+</html>

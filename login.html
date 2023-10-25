@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+<head>
+    <title>Stylish Sign-in page</title>
+    <style>
+        /*css style*/
+        body {
+            background-color: black;
+            font-family: arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 300px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba((0), 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            border: none;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        h6 {
+            text-align: center;
+            color: #333;
+            font-weight: bolder;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Sign in</h2>
+    <form id="Signin-form" action="/login" method="POST">
+        <!-- Update input field names to match server-side expectations -->
+        <input type="text" id="username" name="username" placeholder="username" required>
+        <input type="password" id="password" name="password" placeholder="password" required>
+        <input type="submit" value="Sign in">
+    </form>
+    <br>
+    <h6>Don't have an account? Create <a href="create_login.html">here!</a></h6>
+    <br>
+    <!-- Display an error message here if needed -->
+    <div id="error-message" style="color: red; text-align: center;"></div>
+</div>
+
+<script>
+    const form = document.getElementById('Signin-form');
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        const response = await fetch('/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username, password }),
+        });
+
+        if (response.status === 200) {
+            window.location.href = '/web.html'; // Redirect to web.html
+        } else {
+            // Handle login failure, e.g., display an error message
+            const errorMessage = await response.text();
+            document.getElementById('error-message').textContent = errorMessage;
+        }
+    });
+
+</script>
+</body>
+</html>
